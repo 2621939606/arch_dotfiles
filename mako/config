@@ -1,0 +1,25 @@
+sort=-time
+layer=overlay
+background-color=#2e3440
+width=450
+height=150
+border-size=3
+border-color=#b967ff
+border-radius=12
+icons=0
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=0
+font="Noto Sans CJK SC" 10 
+margin=12
+padding=12,20
+
+[urgency=low]
+border-color=#b967ff
+
+[urgency=normal]
+border-color=#b967ff
+
+[urgency=critical]
+border-color=#b967ff
+default-timeout=0

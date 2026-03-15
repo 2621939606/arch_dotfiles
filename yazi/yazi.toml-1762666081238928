@@ -1,0 +1,4 @@
+[manager]
+# 显示隐藏文件
+show_hidden = true
+

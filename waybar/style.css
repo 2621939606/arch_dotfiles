@@ -1,0 +1,124 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    /* font-family: "Hack Nerd Font", "Font Awesome"; */
+    font-family: "Maple Mono", "Font Awesome";
+    /* font-weight: 500; */
+    font-size: 18px;
+
+    color: #f0e6ff;
+
+    border-radius: 10px;
+    text-shadow: none;
+    
+    transition-property: background;
+    transition-duration: 0.2s;
+
+    /*margin-top: 4px;*/
+    /*margin-bottom: 4px;*/
+}
+
+/* module groups */
+.modules-left {
+    margin: 6px 0 6px 0;
+}
+.modules-right {
+    background-color: transparent;
+    /* margin: 2px 0 0 4px;*/
+    margin: 6px 0 6px 0;
+}
+.modules-center {
+    background-color: transparent;
+    /* margin: 2px 0 0 4px;*/
+    margin: 6px;
+}
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > * {
+    margin-left: 12px;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > * {
+    margin-right: 12px;
+}
+
+#window {
+    font-weight: 400;
+    background-color: rgba(0,119,179,0.6);
+    padding: 0 12px;
+    border: 1px solid #fff;
+    margin-left: 2px;
+}
+
+window#waybar { 
+    background-color: transparent;
+    border-radius: 10px;
+}
+window#waybar.hidden {
+    opacity: 0.8;
+}
+
+#workspaces {
+    background: rgba(46,52,64,0.6);
+    transition: none;
+    border: 3px solid #ff4400;
+}
+
+#workspaces button {
+    border: none;
+    padding: 0 20px 0 12px;
+    background-color: transparent;
+    border-radius: 6px;
+}
+
+#workspaces button:hover {
+    background: #b967ff;
+}
+
+#workspaces button.active {
+    background-color: rgba(21,21,33,0.6);
+}
+
+#workspaces button.active:hover {
+    background: #b967ff;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #cc3436;
+    font-weight: bold;
+}
+
+
+/* modules default */
+#clock,
+#cpu,
+#memory,
+#disk,
+#network,
+#pulseaudio,
+#tray,
+#mode,
+#backlight,
+#temperature,
+#battery,
+#bluetooth,
+#custom-launcher,
+#taskbar,
+#keyboard-state,
+#power-profiles-daemon {
+    margin-left: 5px;
+    padding: 0 12px;
+    background: rgba(46,52,64,0.6);
+    border: 3px solid #ff4400;
+}
+
+#clock {
+    font-style: italic;
+    font-weight: 700;
+    border: 3px solid #ff4400;
+}
+
+

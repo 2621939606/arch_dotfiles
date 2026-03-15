@@ -1,0 +1,284 @@
+{
+    "layer": "top",
+    "posiion": "top",
+    "mode": "dock",
+    "height": 38,
+    // "spacing": 4,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "modules-left": [
+        "hyprland/workspaces"
+        // "hyprland/window"
+        // "disk",
+        // "cpu",
+        // "memory",
+    ],
+    "modules-center": [
+        "clock"
+        // "wlr/taskbar",
+    ],
+    "modules-right": [
+        "tray",
+        "network",
+        // "bluetooth",
+        // "temperature",
+        // "power-profiles-daemon",
+        "pulseaudio",
+        "battery",
+        "backlight"
+    ],
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}{percent}%",
+	"format-icons": ["☀ "],
+        "on-click": "brightnessctl set 5%-",
+        "on-click-right": "brightnessctl set 5%+",
+        "scrole-step": 5,
+        "tooltip": true,
+        "tooltip-format": "反正没你的脑袋亮啦(*ノ` ▽｀)"
+    },
+    "battery": {
+        "interval": 60,
+        "states": {
+            "normal": 80,
+            "warning": 40,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        // "format-alt": "ETA: {time} @ {power}W",
+        "format-icons": [
+            "\uf244",
+            "\uf243",
+            "\uf242",
+            "\uf241",
+            "\uf240"
+        ],
+        "tooltip": true,
+        "tooltip-format": "ETA: {time} @ {power}W"
+    },
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+    },
+
+    // "cpu": {
+    //     "interval": 1,
+    //     "tooltip": true,
+    //     "format": "  {usage}%",
+    //     "format-alt": "  {usage}% @ {avg_frequency}GHz",
+    //     "format-icons": [
+    //         "▏",
+    //         "▎",
+    //         "▍",
+    //         "▌",
+    //         "▋",
+    //         "▊",
+    //         "█",
+    //         "█"
+    //     ],
+    //     "on-click-middle": "exec s-tui"
+    // },
+    
+    "clock": {
+        "interval": 1,
+        "tooltip": true,
+        "format": "{:%y年%m月%d日 %H:%M:%S}",
+        "format-alt": "{:%Y-%m-%d %A %H:%M:%S}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "on-click-right": "mode",
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+
+    // "custom/launcher": {
+    //     "interval": "once",
+    //     "format": "󰣇",
+    //     "on-click": "pkill wofi || wofi --show drun --term=kitty --width=20% --height=50% --columns 1 -I -o $MAIN_DISPLAY",
+    //     "tooltip": false
+    // },
+
+    // "disk": {
+    //     "interval": 30,
+    //     "format": "󰋊  {percentage_used}%",
+    //     "path": "/",
+    //     "tooltip": true,
+    //     "unit": "GB",
+    //     "format-alt": "󰋊 Free {free}/{total}",
+    //     "tooltip-format": "都装了些什么东西呢?"
+    // },
+
+    "hyprland/workspaces": {
+        // "format": "<sub>{icon}</sub>{windows}",
+        "format": "{icon} {windows}",
+        "sort-by-number": true,
+        "window-rewrite-default": "󰣆",
+        "window-rewrite": {
+            "title<.*youtube.*>": "",
+            "title<.*bilibili.*>": "",
+            "title<.*github.*> class<firefox>": "",
+            "class<firefox>": "",
+            "kitty": "",
+            "code": "󰨞",
+            "chrome": "",
+            "chromium": "",
+            "clash": "󰄛",
+            "setting": "",
+            "nautilus": "",
+            "discord": "",
+            "telegram": "",
+            "QQ": "",
+            "wechat": "",
+            "mpv": "",
+            "gwenview": "",
+            "title<.*music.*>": ""
+        },
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+	"persistent-workspaces": {"*": [1,2,3,4,5]}
+    },
+
+    "hyprland/window": {
+        "tooltip": true,
+        "format": "> {}",
+        // "rewrite": {
+        //     "(.*) — Mozilla Firefox": " $1",
+        //     "(.*) - Google Chrome": " $1",
+        //     "(.*) — konsole": " $1",
+        //     "(.*) - Visual Studio Code": "󰨞 $1"
+        // },
+        "tooltip-format": "嘛~这就是大哥哥每天的工作吗♡",
+        "separate-outputs": true,
+        "max-length": 32
+    },
+
+    // "hyprland/language": {
+    //     "format": "{}",
+    //     "format-en": "ENG",
+    //     "format-zh": "简中"
+    // },
+
+    // "memory": {
+    //     "interval": 1,
+    //     "tooltip": true,
+    //     "format": "  {percentage}%",
+    //     "format-alt": "Used {used:0.1f}/{total:0.1f}G",
+    //     "format-icons": [
+    //         "▏",
+    //         "▎",
+    //         "▍",
+    //         "▌",
+    //         "▋",
+    //         "▊",
+    //         "█",
+    //         "█"
+    //     ],
+    //     "tooltip-format": "快用任务来填满我吧♡",
+    //     "on-click-middle": "exec htop"
+    // },
+
+    "network": {
+        "interval": 1,
+        "tooltip": true,
+        "format-wifi": "{icon}",
+        "tooltip-format-wifi": "↑↓ {bandwidthUpBytes}|{bandwidthDownBytes}\n{icon} {essid} @ {signalStrength}%",
+        "format-ethernet": " {bandwidthDownBytes}",
+        "tooltip-format-ethernet": "↑↓ {bandwidthUpBytes}|{bandwidthDownBytes}",
+        "format-disconnected": "ⓘ Lost",
+        "format-icons": [
+            "󰤯",
+            "󰤟",
+            "󰤢",
+            "󰤢",
+            "󰤨"
+        ],
+        "tooltip-format-disconnected": "没有连接呢, 真是杂鱼呢♡",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click-middle": ""
+    },
+
+    // "power-profiles-daemon": {
+    //     "format": "{icon}",
+    //     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    //     "tooltip": true,
+    //     "format-icons": {
+    //         "default": "",
+    //         "performance": "",
+    //         "balanced": "",
+    //         "power-saver": ""
+    //     }
+    // },
+
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon}{volume}%",
+        "format-muted": "✖  Muted",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-bluetooth-muted": "✖  {icon}",
+        "format-icons": {
+            "headphone": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                "",
+                " "
+            ]
+        },
+        "on-click": "amixer set Master 5%-",
+        "on-click-middle": "pavucontrol",
+        "on-click-right": "amixer set Master 5%+"
+    },
+
+    // "wlr/taskbar": {
+    //     "format": "{icon}",
+    //     "icon-size": 24,
+    //     "icon-theme": "Numix-Circle",
+    //     "tooltip-format": "{title}",
+    //     "on-click": "activate",
+    //     // "on-click-right": "close",
+    //     "ignore-list": [
+    //         "kitty"
+    //     ],
+    //     "app_ids-mapping": {
+    //         "firefoxdeveloperedition": "firefox-developer-edition"
+    //     },
+    //     "rewrite": {
+    //         "Firefox Web Browser": "Firefox",
+    //         "Foot Server": "Terminal"
+    //     }
+    // },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format-critical": " {temperatureC}°C",
+        "format": " {temperatureC}°C",
+        "tooltip-format": "咕, 不...不要烧起来呀(((;꒪ꈊ꒪;)))"
+    },
+
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10,
+        "reverse-direction": true
+    }
+}
