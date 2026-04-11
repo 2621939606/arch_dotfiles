@@ -1,3 +1,4 @@
+
 {
     "layer": "top",
     "posiion": "top",
@@ -153,7 +154,7 @@
         "on-click": "activate",
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
-	"persistent-workspaces": {"*": [1,2,3,4,5]}
+	"persistent-workspaces": {"*": [1,2,3]}
     },
 
     "hyprland/window": {
@@ -230,9 +231,9 @@
     "pulseaudio": {
         "scroll-step": 5,
         "format": "{icon}{volume}%",
-        "format-muted": "✖  Muted",
-        "format-bluetooth": "{icon}  {volume}%",
-        "format-bluetooth-muted": "✖  {icon}",
+        "format-muted": "✖ Muted",
+        "format-bluetooth": "{icon} {volume}%",
+        "format-bluetooth-muted": "✖ {icon}",
         "format-icons": {
             "headphone": "",
             "headset": "",
@@ -282,3 +283,4 @@
         "reverse-direction": true
     }
 }
+

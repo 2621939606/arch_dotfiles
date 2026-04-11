@@ -2,10 +2,10 @@
 
 WALLPAPER_DIR="$HOME/.config/hypr/paper"
 
-# 检查 swww 守护进程是否运行
-if ! pgrep -x "swww-daemon" > /dev/null; then
-    echo "启动 swww 守护进程..."
-    swww-daemon &
+# 检查 awww 守护进程是否运行
+if ! pgrep -x "awww-daemon" > /dev/null; then
+    echo "启动 awww 守护进程..."
+    awww-daemon &
     sleep 2  # 等待守护进程启动
 fi
 
@@ -16,7 +16,7 @@ if [ -n "$random_wallpaper" ]; then
     echo "切换到壁纸: $(basename "$random_wallpaper")"
     
     # 设置壁纸
-    swww img "$random_wallpaper" \
+    awww img "$random_wallpaper" \
         --transition-type grow \
         --transition-pos 0.98,0.98 \
         --transition-step 255 \
@@ -32,4 +32,4 @@ else
     if command -v notify-send &> /dev/null; then
         notify-send "壁纸切换失败" "未找到壁纸文件" -t 3000
     fi
-fi
+f

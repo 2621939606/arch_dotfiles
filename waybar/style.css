@@ -1,3 +1,4 @@
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     /* font-family: "Hack Nerd Font", "Font Awesome"; */
@@ -60,7 +61,7 @@ window#waybar.hidden {
 #workspaces {
     background: rgba(46,52,64,0.6);
     transition: none;
-    border: 3px solid #ff4400;
+    border: 2px solid #ff4400;
 }
 
 #workspaces button {
@@ -112,13 +113,14 @@ window#waybar.hidden {
     margin-left: 5px;
     padding: 0 12px;
     background: rgba(46,52,64,0.6);
-    border: 3px solid #ff4400;
+    border: 2px solid #ff4400;
 }
 
 #clock {
     font-style: italic;
     font-weight: 700;
-    border: 3px solid #ff4400;
+    border: 2px solid #ff4400;
 }
+
 
 
